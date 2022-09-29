@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Music Splitter G5</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/static/img/core-img/fav.png" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}" />
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+      <!-- Navbar Area -->
+      <div class="oneMusic-main-menu">
+        <div class="classy-nav-container breakpoint-off" style=" z-index: 100;background-image: linear-gradient(rgba(15, 15, 70, 0.856), rgb(100, 100, 103));">
+          <div class="container">
+            <!-- Menu -->
+            <nav class="classy-navbar justify-content-between" id="oneMusicNav" >
+              <!-- Nav brand -->
+              <a href="index.html" class="nav-brand"
+                ><img src="/static/img/core-img/Group5Logo.webp" alt=""
+              /></a>
+
+              <!-- Navbar Toggler -->
+              <div class="classy-navbar-toggler">
+                <span class="navbarToggler"
+                  ><span></span><span></span><span></span
+                ></span>
+              </div>
+
+              <!-- Menu -->
+              <div class="classy-menu">
+                <!-- Close Button -->
+                <div class="classycloseIcon">
+                  <div class="cross-wrap">
+                    <span class="top"></span><span class="bottom"></span>
+                  </div>
+                </div>
+
+                <!-- Nav Start -->
+                <div class="classynav">
+                  <ul>
+                    <li><a href="/static/contact.html"><span style="color: rgb(255, 255, 255);"> Group Members</span></a></li>
+                  </ul>
+                </div>
+                <!-- Nav End -->
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+      <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div
+          class="single-hero-slide d-flex align-items-center justify-content-center"
+        >
+          <!-- Slide Img -->
+          <div
+            class="slide-img bg-img"
+            style="background-image: url(/static/img/bg-img/b1.jpg)"
+          ></div>
+          <!-- Slide Content -->
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="hero-slides-content text-center">
+                  <h6 data-animation="fadeInUp" data-delay="100ms">
+                    Life Is Better
+                  </h6>
+                  <h2 data-animation="fadeInUp" data-delay="300ms">
+                    With Music <span>With Music</span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Hero Slide -->
+      </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Latest Albums Area Start ##### -->
+
+    <!-- ##### Latest Albums Area End ##### -->
+
+    <!-- ##### Buy Now Area Start ##### -->
+    
+    <div class="imagefirst" style="background-image:linear-gradient(rgba(0, 0, 0, 0.301),rgba(0, 0, 0, 0.479)),url(/static/img/core-img/music3.jpeg)">
+      <!-- <section
+      class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12"> -->
+            <div class="section-heading style-2">
+              <h3>Choose your music</h3>
+              <img src="{{ url_for('static',filename='img/bg-img/ig.png') }}" alt="" style="filter: invert(100%);" />
+              <br />
+              <br />
+              <form method="POST" enctype="multipart/form-data">
+                <input
+                  type="file"
+                  name="file"
+                  id="file_to_upload"
+                  class="btn btn-primary"
+                />
+                <input
+                  type="Submit"
+                  value="Upload"
+                  id="submitBtn"
+                  class="btn btn-success"
+                /><br><br>
+              </form>
+              
+              <!-- TODO: IMPLEMENT YOUTUBE DOWNLOAD FUNCTION -->
+              <form action="" class="search-bar" id="searcccc">
+                <input type="text" placeholder="Convert From Youtube URL" name="q">
+                <button type="submit"><img src="{{ url_for('static', filename='img/bg-img/search.png') }}" style="filter: invert(100%);"></button>
+              </form>
+            </div>
+          <!-- </div>
+        </div> -->
+
+        <div class="row">
+          <!-- Single Album Area -->
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+    <!-- ##### Buy Now Area End ##### -->
+
+    <!-- ##### Featured Artist Area Start ##### -->
+    <section
+      class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed"
+      style="background-image: url(/static/img/bg-img/bg-4.jpg)"
+    >
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-12 col-md-5 col-lg-4">
+            <div class="featured-artist-thumb">
+              <img src="{{ url_for('static',filename='img/bg-img/ori.jfif') }}" width="500" height="300" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-lg-8">
+            <div class="featured-artist-content">
+              <!-- Section Heading -->
+              <div class="section-heading white text-left mb-30">
+                <h2>Original Music</h2>
+              </div>
+              <p>This is the original music.</p>
+              <div class="song-play-area">
+                <div class="song-name">
+                  <p>01. Original music</p>
+                </div>
+                <!--original-->
+                <div id="original_here">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed"
+      style="background-image: url(/static/img/bg-img/bg-4.jpg)"
+    >
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-12 col-md-5 col-lg-4">
+            <div class="featured-artist-thumb">
+              <img
+                src="{{ url_for('static',filename='img/bg-img/vocal.jfif') }}"
+                width="500"
+                height="300"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-lg-8">
+            <div class="featured-artist-content">
+              <!-- Section Heading -->
+              <div class="section-heading white text-left mb-30">
+                <h2>Vocals only</h2>
+              </div>
+              <p>This is the vocal part of the music.</p>
+              <div class="song-play-area">
+                <div class="song-name">
+                  <p>02. Vocals only</p>
+                </div>
+                <!--Vocals only-->
+                <div id="vocals_here">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed"
+      style="background-image: url(/static/img/bg-img/bg-4.jpg)"
+    >
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-12 col-md-5 col-lg-4">
+            <div class="featured-artist-thumb">
+              <img src="{{ url_for('static', filename='img/bg-img/raw.jfif') }}" width="500" height="300" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-lg-8">
+            <div class="featured-artist-content">
+              <!-- Section Heading -->
+              <div class="section-heading white text-left mb-30">
+                <h2>Raw Music Only</h2>
+              </div>
+              <p>This the raw music only with vocals dropped</p>
+              <div class="song-play-area">
+                <div class="song-name">
+                  <p>03. Music only</p>
+                </div>
+                <!--Music only-->
+                <div id="acc_here">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ##### All Javascript Script ##### -->
+    <script>
+      let submitBtn = document.getElementById("submitBtn")
+      let file = document.getElementById("file_to_upload")
+
+      submitBtn.addEventListener('click', (e) => {
+          e.preventDefault()
+          // console.log("Btn Clicked")
+          let songName = file.value // 'C:\\fakepath\\DawDru.mp3' so, need to slice at 12
+          songName = songName.slice(12, -4) // Get just name without extension
+          // Preparing to send the audio to the server
+          var input = document.querySelector('input[type="file"]')
+          var data = new FormData()
+          data.append('file', input.files[0])
+          console.log(data)
+
+          fetch("/", {
+              method: 'POST',
+              // headers: {
+              //     'Content-Type': 'multipart/form-data;',
+              // },
+              body: data
+              })
+              .then((response) => response.json())
+              .then((data) => {
+                  console.log("RESP HIT")
+                  console.log('Success:', data);
+                  let song_name = data['song_name']
+                  console.log(song_name)
+                  show_result(song_name)
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+              });
+      })
+
+      function show_result(song_name) {
+          let originalSection = document.getElementById('original_here')
+          let vocalsSection = document.getElementById('vocals_here')
+          let accSection = document.getElementById('acc_here')
+
+          let original_path = "http://localhost:5000/original/" + song_name
+          let vocals_path = "http://localhost:5000/vocals/" + song_name
+          let accompaniment_path = "http://localhost:5000/accompaniment/" + song_name
+
+          // Creating headings brrrrr
+          let original_heading = document.createElement('h1')
+          original_heading.textContent = "Original"
+          let vocals_heading = document.createElement('h1')
+          vocals_heading.textContent = "Vocals"
+          let acc_heading = document.createElement('h1')
+          acc_heading.textContent = "Accompaniment"
+
+          let brrrrr = document.createElement('br')
+
+          // Creating the Audio Elements
+          let originalEle = new Audio(original_path)
+          let vocalsEle = new Audio(vocals_path)
+          let accEle = new Audio(accompaniment_path)
+          originalEle.controls = true
+          vocalsEle.controls = true
+          accEle.controls = true
+
+          // Adding the Elements to HTML
+
+          originalSection.appendChild(originalEle)
+          vocalsSection.appendChild(vocalsEle)
+          accSection.appendChild(accEle)
+
+          // mainSection.appendChild(brrrrr)
+          // mainSection.appendChild(original_heading)
+          // mainSection.appendChild(originalEle)
+          // mainSection.appendChild(brrrrr)
+
+          // mainSection.appendChild(vocals_heading)
+          // mainSection.appendChild(vocalsEle)
+          // mainSection.appendChild(brrrrr)
+
+          // mainSection.appendChild(acc_heading)
+          // mainSection.appendChild(accEle)
+          // mainSection.appendChild(brrrrr)
+      }
+  </script>
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ url_for('static',filename='js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <!-- Popper js -->
+    <script src="{{ url_for('static',filename='js/bootstrap/popper.min.js') }}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ url_for('static',filename='js/bootstrap/bootstrap.min.js') }}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ url_for('static',filename='js/plugins/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ url_for('static',filename='js/active.js') }}"></script>
+  </body>
+</html>

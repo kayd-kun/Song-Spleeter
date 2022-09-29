@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spleeter</title>
+</head>
+<body>
+    <main class="main" id="main">
+        <h1>Upload Song Here:</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file_to_upload">
+            <input type="Submit" value="Upload" id="submitBtn">
+        </form>
+
+        <br>
+        <br>
+    </main>
+    
+    <script>
+        let submitBtn = document.getElementById("submitBtn")
+        let file = document.getElementById("file_to_upload")
+
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            // console.log("Btn Clicked")
+            let songName = file.value // 'C:\\fakepath\\DawDru.mp3' so, need to slice at 12
+            songName = songName.slice(12, -4) // Get just name without extension
+            // Preparing to send the audio to the server
+            var input = document.querySelector('input[type="file"]')
+            var data = new FormData()
+            data.append('file', input.files[0])
+            console.log(data)
+
+            fetch("/", {
+                method: 'POST',
+                // headers: {
+                //     'Content-Type': 'multipart/form-data;',
+                // },
+                body: data
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("RESP HIT")
+                    console.log('Success:', data);
+                    let song_name = data['song_name']
+                    console.log(song_name)
+                    show_result(song_name)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        })
+
+        function show_result(song_name) {
+            let mainSection = document.getElementById('main')
+            let original_path = "http://localhost:5000/original/" + song_name
+            let vocals_path = "http://localhost:5000/vocals/" + song_name
+            let accompaniment_path = "http://localhost:5000/accompaniment/" + song_name
+
+            // Creating headings brrrrr
+            let original_heading = document.createElement('h1')
+            original_heading.textContent = "Original"
+            let vocals_heading = document.createElement('h1')
+            vocals_heading.textContent = "Vocals"
+            let acc_heading = document.createElement('h1')
+            acc_heading.textContent = "Accompaniment"
+
+            let brrrrr = document.createElement('br')
+
+            // Creating the Audio Elements
+            let originalEle = new Audio(original_path)
+            let vocalsEle = new Audio(vocals_path)
+            let accEle = new Audio(accompaniment_path)
+            originalEle.controls = true
+            vocalsEle.controls = true
+            accEle.controls = true
+
+            // Adding the Elements to HTML
+            mainSection.appendChild(brrrrr)
+            mainSection.appendChild(original_heading)
+            mainSection.appendChild(originalEle)
+            mainSection.appendChild(brrrrr)
+
+            mainSection.appendChild(vocals_heading)
+            mainSection.appendChild(vocalsEle)
+            mainSection.appendChild(brrrrr)
+
+            mainSection.appendChild(acc_heading)
+            mainSection.appendChild(accEle)
+            mainSection.appendChild(brrrrr)
+        }
+    </script>
+</body>
+</html>
